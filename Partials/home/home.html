@@ -1,0 +1,63 @@
+<div class="main">
+    <div class="w3_agile_main_grids ">
+        <div class="agile_main_grid_left">
+            <div class="w3_agileits_personal_card_grid">
+                <div class="wthree_personal_card_gridl">
+                    <img ng-src="{{user.avatar}}" style="height: 80px; width: 80px;" />
+                </div>
+                <div class="wthree_personal_card_gridr">
+                    <h2>{{user.name}}</h2>
+                    <p>{{user.description}}</p>
+                </div>
+                <div class="clear"> </div>
+                <div class="agileinfo_personal_text text-justify">
+                    <p><b>(1) </b>{{description.item1}}</p>
+                    <p><b>(2) </b>{{description.item2}}</p>
+                    <p><b>(3) </b>{{description.item3}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="agileits_w3layouts_main_grid_right">
+            <section class="slider">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li ng-repeat="(key, skill) in skills">
+                            <div class="w3ls_main_grid_right_grid">
+                                <div class="w3l_net_worth">
+                                    <h4>{{skill.technology}}</h4>
+                                    <p>{{skill.level}}</p>
+                                </div>
+                                <div class="w3_main_grid_right_grid">
+                                    <div class="w3layouts_main_grid_right_grid">
+                                        <img ng-src="{{skill.logo}}" alt="">
+                                        <div class="clear"> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="clear"> </div>
+    </div>
+</div>
+
+<style type="text/css"> @import url("Partials/home/home.style.css"); </style>
+
+<!-- flexSlider -->
+<script defer src="js/jquery.flexslider.js"></script>
+
+<script type="text/javascript">
+
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function (slider) {
+                $('body').removeClass('loading');
+            }
+        });
+    });
+
+</script>
+<!-- //flexSlider -->
